@@ -22,9 +22,10 @@ namespace DotNetCoreAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<string> Get()
+        public object Get()
         {
-            return new string[] { "value1", "value2" };
+            var result = _command.GetCommantds();
+            return Ok(result);
         }
 
         // GET api/<CommandController>/5

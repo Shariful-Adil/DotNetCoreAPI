@@ -18,5 +18,7 @@ namespace DotNetCoreAPI.Models
         public string Platform { get; set; }
 
         public DateTime? DateCreated { get; set; }
+
+        public string TechStack { get; set; }
     }
 }

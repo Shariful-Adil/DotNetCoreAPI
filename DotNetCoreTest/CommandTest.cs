@@ -6,25 +6,42 @@ using Xunit;
 
 namespace DotNetCoreTest
 {
-    public class CommandTest
+    public class CommandTest : IDisposable
     {
-        [Fact]
-        public void CanChangeHowTo()
+
+        Command testCommand;
+        public CommandTest()
         {
-        //Arrange
-            var testCommand = new Command
+            testCommand = new Command
             {
                 HowTo = "Do something awesome",
                 Platform = "xUnit",
                 Line = "dotnet test"
             };
+        }
 
+
+        [Fact]
+        public void CanChangeHowTo()
+        {
             //Act
             testCommand.HowTo = "Execute Unit Tests";
-            testCommand.Platform = "xunit";
             //Assert
             Assert.Equal("Execute Unit Tests", testCommand.HowTo);
+        }
+
+        [Fact]
+        public void CanChangePlatform()
+        {
+            //Act
+            testCommand.Platform = "xunit";
+            //Assert
             Assert.Equal("xunit", testCommand.Platform);
+        }
+
+        public void Dispose()
+        {
+            testCommand = null;
         }
     }
 }

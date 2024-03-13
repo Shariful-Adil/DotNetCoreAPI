@@ -1,1 +1,6 @@
+Hello world hi test file fghjg ljlk
+<<<<<<< .mine
 Hello hi test file fghjg ljlk
+=======
+Hello world test file fghjg ljlk
+>>>>>>> .theirs
